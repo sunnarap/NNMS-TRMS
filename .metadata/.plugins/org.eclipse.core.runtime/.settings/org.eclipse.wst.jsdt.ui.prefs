@@ -1,11 +1,23 @@
 eclipse.preferences.version=1
 fontPropagated=true
 org.eclipse.jface.textfont=1|Consolas|10.0|0|WINDOWS|1|0|0|0|0|0|0|0|0|1|0|0|0|0|Consolas;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a2401a621d041f5c32357900fcb13500ef236e4d
 org.eclipse.wst.jsdt.internal.ui.navigator.layout=1
 org.eclipse.wst.jsdt.ui.editor.tab.width=
 org.eclipse.wst.jsdt.ui.formatterprofiles.version=11
 org.eclipse.wst.jsdt.ui.javadoclocations.migrated=true
 proposalOrderMigrated=true
+<<<<<<< HEAD
+=======
+=======
+org.eclipse.wst.jsdt.ui.editor.tab.width=
+org.eclipse.wst.jsdt.ui.formatterprofiles.version=11
+org.eclipse.wst.jsdt.ui.javadoclocations.migrated=true
+>>>>>>> 928fc1c07ece95c9360806a777ced4b55e993b46
+>>>>>>> a2401a621d041f5c32357900fcb13500ef236e4d
 tabWidthPropagated=true
 useAnnotationsPrefPage=true
 useQuickDiffPrefPage=true
