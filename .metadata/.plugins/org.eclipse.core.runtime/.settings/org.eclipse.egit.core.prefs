@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 GitRepositoriesView.GitDirectories=C\:\\Git\\NNMS-TRMS\\.git;C\:\\Revature\\.git;
 GitRepositoriesView.GitDirectories.relative=.git;C\:\\Revature\\.git;
+=======
+GitRepositoriesView.GitDirectories=C\:\\Revature\\.git;
+GitRepositoriesView.GitDirectories.relative=C\:\\Revature\\.git;
+>>>>>>> 928fc1c07ece95c9360806a777ced4b55e993b46
 eclipse.preferences.version=1

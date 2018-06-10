@@ -1,4 +1,7 @@
 activeuserprofiles=SunnyP;Team
 eclipse.preferences.version=1
 org.eclipse.rse.systemtype.local.systemType.defaultUserId=Sunnara
+<<<<<<< HEAD
 useridperkey=SunnyP.Local\=Sunnara;
+=======
+>>>>>>> 928fc1c07ece95c9360806a777ced4b55e993b46

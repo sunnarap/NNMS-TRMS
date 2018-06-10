@@ -76,6 +76,7 @@ java.net.UnknownHostException: download.oracle.com
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2018-06-08 16:31:46.751
 !MESSAGE Using platform encoding (MS932 actually) to copy filtered resources, i.e. build is platform dependent!
+<<<<<<< HEAD
 !SESSION 2018-06-08 17:13:05.068 -----------------------------------------------
 eclipse.buildId=4.7.3.M20180330-0640
 java.version=1.8.0_172
@@ -456,3 +457,5 @@ Java Model Exception: Java Model Status [<project root> [in TRMS] is not on its 
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2018-06-10 16:28:33.866
 !MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+=======
+>>>>>>> 928fc1c07ece95c9360806a777ced4b55e993b46

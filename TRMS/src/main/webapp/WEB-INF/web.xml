@@ -9,6 +9,7 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+<<<<<<< HEAD
   <servlet>
     <description></description>
     <display-name>RegistrationServlet</display-name>
@@ -19,4 +20,6 @@
     <servlet-name>RegistrationServlet</servlet-name>
     <url-pattern>/RegistrationServlet</url-pattern>
   </servlet-mapping>
+=======
+>>>>>>> 928fc1c07ece95c9360806a777ced4b55e993b46
 </web-app>
