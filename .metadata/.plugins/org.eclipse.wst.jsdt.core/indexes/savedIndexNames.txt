@@ -1,0 +1,12 @@
+<<<<<<< HEAD
+INDEX VERSION 1.4+C:\Git\NNMS-TRMS\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2804123386.index
+=======
+INDEX VERSION 1.4+C:\Revature\NNMS-TRMS\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2021614401.index
+2189893220.index
+2804123386.index
+1090158978.index
+1244652705.index
+1695774623.index
+>>>>>>> 928fc1c07ece95c9360806a777ced4b55e993b46
