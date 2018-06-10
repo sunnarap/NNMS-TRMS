@@ -1,13 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD
 Built-By: nicks
-=======
-<<<<<<< HEAD
-Built-By: natha
-=======
-Built-By: Sunnara
->>>>>>> 928fc1c07ece95c9360806a777ced4b55e993b46
->>>>>>> a2401a621d041f5c32357900fcb13500ef236e4d
 Build-Jdk: 1.8.0_172
 Created-By: Maven Integration for Eclipse
 
