@@ -1,11 +1,7 @@
-activeuserprofiles=SunnyP;Team
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=a2401a621d041f5c32357900fcb13500ef236e4d
+activeuserprofiles=NICK-PC;SunnyP;Team
 eclipse.preferences.version=1
-org.eclipse.rse.systemtype.local.systemType.defaultUserId=Sunnara
-<<<<<<< HEAD
+org.eclipse.rse.systemtype.local.systemType.defaultUserId=nicks
 useridperkey=SunnyP.Local\=Sunnara;
-=======
-<<<<<<< HEAD
-useridperkey=SunnyP.Local\=Sunnara;
-=======
->>>>>>> 928fc1c07ece95c9360806a777ced4b55e993b46
->>>>>>> a2401a621d041f5c32357900fcb13500ef236e4d

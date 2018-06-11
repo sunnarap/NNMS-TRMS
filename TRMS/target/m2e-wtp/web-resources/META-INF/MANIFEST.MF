@@ -1,13 +1,5 @@
-<<<<<<< HEAD
 Manifest-Version: 1.0
 Built-By: nicks
 Build-Jdk: 1.8.0_172
 Created-By: Maven Integration for Eclipse
 
-=======
-Manifest-Version: 1.0
-Built-By: Sunnara
-Build-Jdk: 1.8.0_172
-Created-By: Maven Integration for Eclipse
-
->>>>>>> b145e0c634eb5c353733c385a6e599094024e7e8

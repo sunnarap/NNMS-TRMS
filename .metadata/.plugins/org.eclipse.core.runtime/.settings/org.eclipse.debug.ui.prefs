@@ -1,10 +1,6 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=a2401a621d041f5c32357900fcb13500ef236e4d
 eclipse.preferences.version=1
-<<<<<<< HEAD
 org.eclipse.debug.ui.PREF_LAUNCH_PERSPECTIVES=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<launchPerspectives/>\r\n
-=======
-<<<<<<< HEAD
-org.eclipse.debug.ui.PREF_LAUNCH_PERSPECTIVES=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<launchPerspectives/>\r\n
-=======
->>>>>>> 928fc1c07ece95c9360806a777ced4b55e993b46
->>>>>>> a2401a621d041f5c32357900fcb13500ef236e4d
-preferredTargets=default\:default|
+preferredTargets=default\:default|default,org.eclipse.wst.jsdt.chromium.debug.ui.toggleTargetId\:default|
