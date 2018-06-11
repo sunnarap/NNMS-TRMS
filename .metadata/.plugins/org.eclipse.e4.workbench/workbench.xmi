@@ -3,7 +3,7 @@
   <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workbench>&#xD;&#xA;&lt;mruList>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;UserDAOImpl.java&quot; tooltip=&quot;TRMS/src/main/java/com/revature/daoimpl/UserDAOImpl.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/TRMS/src/main/java/com/revature/daoimpl/UserDAOImpl.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Form.java&quot; tooltip=&quot;TRMS/src/main/java/com/revature/beans/Form.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/TRMS/src/main/java/com/revature/beans/Form.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;UserDAO.java&quot; tooltip=&quot;TRMS/src/main/java/com/revature/dao/UserDAO.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/TRMS/src/main/java/com/revature/dao/UserDAO.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;ConnFactory.java&quot; tooltip=&quot;TRMS/src/main/java/util/ConnFactory.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/TRMS/src/main/java/util/ConnFactory.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.PropertiesFileEditor&quot; name=&quot;database.properties&quot; tooltip=&quot;TRMS/database.properties&quot;>&#xD;&#xA;&lt;persistable path=&quot;/TRMS/database.properties&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;User.java&quot; tooltip=&quot;TRMS/src/main/java/com/revature/beans/User.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/TRMS/src/main/java/com/revature/beans/User.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;FormServlet.java&quot; tooltip=&quot;TRMS/src/main/java/com/revature/servlets/FormServlet.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/TRMS/src/main/java/com/revature/servlets/FormServlet.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;LoginServlet.java&quot; tooltip=&quot;TRMS/src/main/java/com/revature/servlets/LoginServlet.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/TRMS/src/main/java/com/revature/servlets/LoginServlet.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;web.xml&quot; tooltip=&quot;TRMS/src/main/webapp/WEB-INF/web.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/TRMS/src/main/webapp/WEB-INF/web.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;RegistrationServlet.java&quot; tooltip=&quot;TRMS/src/main/java/com/revature/servlets/RegistrationServlet.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/TRMS/src/main/java/com/revature/servlets/RegistrationServlet.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.m2e.editor.MavenPomEditor&quot; name=&quot;pom.xml&quot; tooltip=&quot;nnmstrms/pom.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/nnmstrms/pom.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.m2e.editor.MavenPomEditor&quot; name=&quot;pom.xml&quot; tooltip=&quot;TRMS/pom.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/TRMS/pom.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;/mruList>&#xD;&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
   <tags>ModelMigrationProcessor.001</tags>
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_o1osUWtYEeiqL-7ZaV4F3Q" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_o1osUmtYEeiqL-7ZaV4F3Q" label="%trimmedwindow.label.eclipseSDK" x="671" y="-20" width="1024" height="768">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_o1osUWtYEeiqL-7ZaV4F3Q" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_o1osUmtYEeiqL-7ZaV4F3Q" label="%trimmedwindow.label.eclipseSDK" x="0" y="0" width="1024" height="768">
     <persistedState key="coolBarVisible" value="true"/>
     <persistedState key="perspectiveBarVisible" value="true"/>
     <persistedState key="isRestored" value="true"/>
@@ -75,8 +75,9 @@
           <tags>persp.showIn:org.eclipse.tm.terminal.view.ui.TerminalsView</tags>
           <tags>persp.newWizSC:org.eclipse.jpt.jpa.ui.wizard.newJpaProject</tags>
           <tags>persp.perspSC:org.eclipse.jpt.ui.jpaPerspective</tags>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_o1osVWtYEeiqL-7ZaV4F3Q" selectedElement="_o1osW2tYEeiqL-7ZaV4F3Q" horizontal="true">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_o1osVWtYEeiqL-7ZaV4F3Q" selectedElement="_o1osVmtYEeiqL-7ZaV4F3Q" horizontal="true">
             <children xsi:type="basic:PartStack" xmi:id="_o1osVmtYEeiqL-7ZaV4F3Q" elementId="topLeft" containerData="1923" selectedElement="_o1osV2tYEeiqL-7ZaV4F3Q">
+              <tags>active</tags>
               <children xsi:type="advanced:Placeholder" xmi:id="_o1osV2tYEeiqL-7ZaV4F3Q" elementId="org.eclipse.ui.navigator.ProjectExplorer" ref="_o1pUm2tYEeiqL-7ZaV4F3Q"/>
               <children xsi:type="advanced:Placeholder" xmi:id="_o1osWGtYEeiqL-7ZaV4F3Q" elementId="org.eclipse.ui.views.ResourceNavigator" toBeRendered="false" ref="_o1p6pWtYEeiqL-7ZaV4F3Q"/>
               <children xsi:type="advanced:Placeholder" xmi:id="_o1osWWtYEeiqL-7ZaV4F3Q" elementId="org.eclipse.jdt.ui.TypeHierarchy" toBeRendered="false" ref="_o1p6pmtYEeiqL-7ZaV4F3Q"/>
@@ -142,7 +143,6 @@
       <children xsi:type="basic:PartStack" xmi:id="_o1pUj2tYEeiqL-7ZaV4F3Q" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_St2QsG0XEeiQ7PFvdyElCg">
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
-        <tags>active</tags>
         <children xsi:type="basic:Part" xmi:id="_biEbAGz5Eei3bPiUQ9tI3g" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="User.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
           <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;User.java&quot; partName=&quot;User.java&quot; title=&quot;User.java&quot; tooltip=&quot;TRMS/src/main/java/com/revature/beans/User.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/TRMS/src/main/java/com/revature/beans/User.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1046&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
@@ -162,12 +162,10 @@
           <tags>removeOnHide</tags>
         </children>
         <children xsi:type="basic:Part" xmi:id="_St2QsG0XEeiQ7PFvdyElCg" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="UserDAOImpl.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;UserDAOImpl.java&quot; partName=&quot;UserDAOImpl.java&quot; title=&quot;UserDAOImpl.java&quot; tooltip=&quot;TRMS/src/main/java/com/revature/daoimpl/UserDAOImpl.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/TRMS/src/main/java/com/revature/daoimpl/UserDAOImpl.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;2505&quot; selectionTopPixel=&quot;1620&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;UserDAOImpl.java&quot; partName=&quot;UserDAOImpl.java&quot; title=&quot;UserDAOImpl.java&quot; tooltip=&quot;TRMS/src/main/java/com/revature/daoimpl/UserDAOImpl.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/TRMS/src/main/java/com/revature/daoimpl/UserDAOImpl.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;2505&quot; selectionTopPixel=&quot;1817&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
           <tags>removeOnHide</tags>
-          <tags>active</tags>
-          <tags>activeOnClose</tags>
         </children>
       </children>
     </sharedElements>
@@ -177,6 +175,8 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot; currentWorkingSetName=&quot;Aggregate for window 1528492410162&quot; org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets=&quot;0&quot;>&#xD;&#xA;&lt;lastRecentlyUsedFilters/>&#xD;&#xA;&lt;/view>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
+      <tags>active</tags>
+      <tags>activeOnClose</tags>
       <menus xmi:id="_o1pUnGtYEeiqL-7ZaV4F3Q" elementId="org.eclipse.ui.navigator.ProjectExplorer">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -335,7 +335,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_o1p64GtYEeiqL-7ZaV4F3Q" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_WWonMG0VEeiQ7PFvdyElCg" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_o1s_sWtYEeiqL-7ZaV4F3Q"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_QLFZkG2GEeiwjrwatWQR9A" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_o1s_sWtYEeiqL-7ZaV4F3Q"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_o1p67WtYEeiqL-7ZaV4F3Q" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -368,7 +368,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_o1p7Q2tYEeiqL-7ZaV4F3Q" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_WWs4oG0VEeiQ7PFvdyElCg" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_o1s_VGtYEeiqL-7ZaV4F3Q"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_QLJrAG2GEeiwjrwatWQR9A" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_o1s_VGtYEeiqL-7ZaV4F3Q"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_o1p7TmtYEeiqL-7ZaV4F3Q" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
