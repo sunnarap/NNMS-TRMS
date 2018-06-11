@@ -11,6 +11,7 @@
     <servlet-name>RegistrationServlet</servlet-name>
     <url-pattern>/RegistrationServlet</url-pattern>
   </servlet-mapping>
+
   <servlet>
     <description></description>
     <display-name>LoginServlet</display-name>
