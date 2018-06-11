@@ -1,7 +1,9 @@
 eclipse.preferences.version=1
-<<<<<<< HEAD
 migrated.task.repositories.secure.store=true
+<<<<<<< HEAD
 =======
 >>>>>>> 928fc1c07ece95c9360806a777ced4b55e993b46
+=======
+>>>>>>> branch 'simpsonN' of https://github.com/sunnarap/NNMS-TRMS.git
 org.eclipse.mylyn.tasks.ui.filters.nonmatching=true
 org.eclipse.mylyn.tasks.ui.filters.nonmatching.encouraged=true
