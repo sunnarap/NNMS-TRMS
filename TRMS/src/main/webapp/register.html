@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title> TRMS Register</title>
+</head>
+<style>
+	fieldset
+	{
+		width: 50%
+	}
+
+	body
+	{
+		line-height: 30px;
+	}
+
+
+</style>
+<body>
+	<form>
+	<fieldset>
+		<legend>User Information</legend>
+		<label>First Name
+			<input type='text' name='fname' maxlength='30'/>
+		</label>
+		<br />
+		<label>Last Name
+			<input type='text' name='lname' maxlength='30'/>
+		</label>
+		<br />
+		<label>Email
+			<input type='text' name='email' maxlength='100'/>
+		</label>
+		<br />
+		<label>Password
+			<input type='password' name='password' maxlength='100'/>
+		</label>
+		<br />
+		<label> Repeat Password
+			<input type='password' name='password2' maxlength='100'/>
+	   </label>
+	   <br />
+	   <input type='submit' value='Submit'/>
+	</fieldset>
+	</form>
+
+	<form>
+	<fieldset>
+	<legend>User Information v2</legend>
+	<label>
+		Name <br />
+		<input type='text' name='fname' maxlength='30' placeholder = 'First Name'/>
+	</label>
+	<label>
+		<input type='text' name='lname' maxlength='30' placeholder = 'Last Name'/>
+	</label>
+	<br />
+	<label>
+		Email <br />
+		<input type='text' name='email' maxlength='100' placeholder = 'youremail@email.com'/>
+	</label>
+	<br />
+	<label>
+		Password <br />
+		<input type='password' name='password' maxlength='100' placeholder='Password'/>
+		<input type='password' name='password2' maxlength='100' placeholder='Retype password'/>
+	</label>
+	<br />
+	<input type='submit' value='Submit'/>
+	</fieldset> 
+	</form>
+<script src="src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>"
+<script type="text/javascript" src="register.js"></script>
+</body>
+</html>
