@@ -3,6 +3,10 @@
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+<<<<<<< HEAD
+=======
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+>>>>>>> branch 'sunny' of https://github.com/sunnarap/NNMS-TRMS.git
         <property name="context-root" value="TRMS"/>
         <property name="java-output-path" value="/TRMS/target/classes"/>
     </wb-module>
