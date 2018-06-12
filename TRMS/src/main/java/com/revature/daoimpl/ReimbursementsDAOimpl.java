@@ -1,4 +1,5 @@
 package com.revature.daoimpl;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -27,23 +28,26 @@ public class ReimbursementsDAOimpl implements ReimbursementsDAO {
 	/*
 	 * Create and put a new reimbursement/form data in database
 	 */
-	public void createReimbursement(String location, Timestamp submit, Timestamp finished, double amount, String status,
-			int cId, int userId, int worker) throws SQLException {
+	public void createReimbursement(String location, Timestamp startDate, Timestamp submit, Timestamp finished, double amount, String status,
+			String desc, String justification, int cId, int userId, int worker) throws SQLException {
 		
 		Connection conn = cf.getConnection();
 		String sql = 
-				"INSERT INTO REIMBURSEMENT VALUES(RIDSEQUENCE.NEXTVAL,?,?,?,?,?,?,?,?)";
+				"INSERT INTO REIMBURSEMENT VALUES(RIDSEQUENCE.NEXTVAL,?,?,?,?,?,?,?,?,?,?,?)";
 
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, location);
-			ps.setTimestamp(2, submit);
-			ps.setTimestamp(3, finished);
-			ps.setDouble(4, amount);
-			ps.setString(5, status);
-			ps.setInt(6, cId);
-			ps.setInt(7, userId);
-			ps.setInt(8, worker);
+			ps.setTimestamp(2, startDate);
+			ps.setTimestamp(3, submit);
+			ps.setTimestamp(4, finished);
+			ps.setDouble(5, amount);
+			ps.setString(6, status);
+			ps.setString(7, desc);
+			ps.setString(8, justification);
+			ps.setInt(9, cId);
+			ps.setInt(10, userId);
+			ps.setInt(11, worker);
 
 			ps.executeUpdate();
 		} catch(SQLException e) {
@@ -71,8 +75,8 @@ public class ReimbursementsDAOimpl implements ReimbursementsDAO {
 			rs = ps.executeQuery();
 			if(rs.next())
 			{
-				r = new Reimbursements(rs.getInt(1), rs.getString(2), rs.getTimestamp(3),
-						rs.getTimestamp(4), rs.getDouble(5), rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getInt(9));
+				r = new Reimbursements(rs.getInt(1), rs.getString(2), rs.getTimestamp(3), rs.getTimestamp(4),
+						rs.getTimestamp(5), rs.getDouble(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getInt(10), rs.getInt(11), rs.getInt(12));
 				conn.close();
 				return r;
 			}
@@ -177,12 +181,12 @@ public class ReimbursementsDAOimpl implements ReimbursementsDAO {
 
 	public void deleteReimbursement(int rId) throws SQLException {
 		Connection conn = cf.getConnection();
-		String sql = "DELETE FROM REIMBURSEMENTS WHERE RID = '?'";
+		String sql = "{call DELETE_REIMBURSEMENT(?)";
 		
 		try {
-			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setInt(1, rId);
-			ps.execute();
+			CallableStatement cs = conn.prepareCall(sql);
+			cs.setInt(1, rId);
+			cs.execute();
 			conn.close();
 			
 		}catch(SQLException e)

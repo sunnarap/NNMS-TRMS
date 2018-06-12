@@ -6,10 +6,13 @@ public class Reimbursements {
 	
 	private int rId;
 	private String location;
+	private Timestamp startDate;
 	private Timestamp submit;
 	private Timestamp finished;
 	private double amount;
 	private String status;
+	private String desc;
+	private String justification;
 	private int cId;
 	private int userId;
 	private int worker;
@@ -18,19 +21,26 @@ public class Reimbursements {
 		super();
 	}
 
-	public Reimbursements(int rId, String location, Timestamp submit, Timestamp finished, double amount, String status,
-			int cId, int userId, int worker) {
+	
+
+	public Reimbursements(int rId, String location, Timestamp startDate, Timestamp submit, Timestamp finished,
+			double amount, String status, String desc, String justification, int cId, int userId, int worker) {
 		super();
 		this.rId = rId;
 		this.location = location;
+		this.startDate = startDate;
 		this.submit = submit;
 		this.finished = finished;
 		this.amount = amount;
 		this.status = status;
+		this.desc = desc;
+		this.justification = justification;
 		this.cId = cId;
 		this.userId = userId;
 		this.worker = worker;
 	}
+
+
 
 	public int getrId() {
 		return rId;
@@ -47,15 +57,7 @@ public class Reimbursements {
 	public void setLocation(String location) {
 		this.location = location;
 	}
-
-	public Timestamp getSumbit() {
-		return submit;
-	}
-
-	public void setSumbit(Timestamp sumbit) {
-		this.submit = sumbit;
-	}
-
+	
 	public Timestamp getFinished() {
 		return finished;
 	}
@@ -104,18 +106,44 @@ public class Reimbursements {
 		this.worker = worker;
 	}
 
+	public Timestamp getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(Timestamp startDate) {
+		this.startDate = startDate;
+	}
+
+	public Timestamp getSubmit() {
+		return submit;
+	}
+
+	public void setSubmit(Timestamp submit) {
+		this.submit = submit;
+	}
+
+	public String getDesc() {
+		return desc;
+	}
+
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+
+	public String getJustification() {
+		return justification;
+	}
+
+	public void setJustification(String justification) {
+		this.justification = justification;
+	}
+
 	@Override
 	public String toString() {
-		return "Reimbursements [rId=" + rId + ", location=" + location + ", submit=" + submit + ", finished=" + finished
-				+ ", amount=" + amount + ", status=" + status + ", cId=" + cId + ", userId=" + userId + ", worker="
-				+ worker + "]";
+		return "Reimbursements [rId=" + rId + ", location=" + location + ", startDate=" + startDate + ", submit="
+				+ submit + ", finished=" + finished + ", amount=" + amount + ", status=" + status + ", desc=" + desc
+				+ ", justification=" + justification + ", cId=" + cId + ", userId=" + userId + ", worker=" + worker
+				+ "]";
 	}
-	
-	
-	
-	
-	
-	
-	
 
 }
