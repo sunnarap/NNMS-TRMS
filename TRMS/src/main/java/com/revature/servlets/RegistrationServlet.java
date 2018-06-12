@@ -42,8 +42,10 @@ public class RegistrationServlet extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("hi");
 		// TODO Auto-generated method stub
 		super.doPost(req, resp);
+		req.getRequestDispatcher("register.html").forward(req, resp);
 	}
 //
 //	protected void doPost(HttpServletRequest request,

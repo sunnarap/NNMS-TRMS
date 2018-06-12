@@ -7,7 +7,7 @@ import com.revature.daoimpl.UserDAOImpl;
 public class Driver {
 
 	public static void main(String[] args) {
-		
+
 		UserDAOImpl udi = new UserDAOImpl();
 		try {
 			udi.createUser("Bob", "Ross", "bob.ross@revature.com", "password1", 1);
