@@ -17,22 +17,42 @@ public class RegistrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	//HTML file names
-	private final static String REG_HTML_NAME = "registration.html";
-
-	protected void doGet(HttpServletRequest request,
-			HttpServletResponse response)
-					throws ServletException, IOException {
-		System.out.println("doGet of LoginServlet");
-		RequestDispatcher rd = request.getRequestDispatcher("login.html");
-		rd.forward(request, response);
+	//private final static String REG_HTML_NAME = "registration.html";
+	private final static String REG_HTML_NAME = "register.html";
+	
+//	protected void doGet(HttpServletRequest request,
+//			HttpServletResponse response)
+//					throws ServletException, IOException {
+//		System.out.println("doGet of LoginServlet");
+//		RequestDispatcher rd = request.getRequestDispatcher("login.html");
+//		rd.forward(request, response);
+//	}
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		RequestDispatcher rd = req.getRequestDispatcher("register.html");
+		resp.setContentType("text/html");
+		rd.forward(req, resp);
+		String fname = req.getParameter("fname");
+		String lname = req.getParameter("lname");
+		System.out.println(req.getRequestURI());
+		System.out.println(req.getParameter("fname"));
+		
 	}
-
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response)
-					throws ServletException, IOException {
-		System.out.println("doPost of LoginServlet");
-		//response.sendRedirect("home"); //redirect
-		request.getRequestDispatcher("home.html").forward(request, response); //forward
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		super.doPost(req, resp);
 	}
+//
+//	protected void doPost(HttpServletRequest request,
+//			HttpServletResponse response)
+//					throws ServletException, IOException {
+//		System.out.println("doPost of LoginServlet");
+//		//response.sendRedirect("home"); //redirect
+//		request.getRequestDispatcher("home.html").forward(request, response); //forward
+//	}
 
 }
