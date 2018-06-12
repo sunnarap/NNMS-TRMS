@@ -38,7 +38,6 @@ public class RegistrationServlet extends HttpServlet {
 		String lname = req.getParameter("lname");
 		System.out.println(req.getRequestURI());
 		System.out.println(req.getParameter("fname"));
-		
 	}
 	
 	@Override

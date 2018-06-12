@@ -22,6 +22,9 @@ public class UserDAOImpl implements UserDAO {
 	public static ConnFactory cf = ConnFactory.getInstance();
 
 	
+	/*
+	 * Creates a new user in the database
+	 */
 	public void createUser(String fName, String lName, 
 			String email, String password, int tid) throws SQLException {
 		
@@ -43,13 +46,15 @@ public class UserDAOImpl implements UserDAO {
 		
 	}
 
-	
+	/*
+	 * Retrieves a user from the database
+	 */
 	public User retrieveUser(String email) throws SQLException {
 		
 		Connection conn = cf.getConnection();
 		String[] primaryKeys = new String[1];
 		primaryKeys[0] = "USERID";
-		String sql = "SELECT * FROM USERS WHERE EMAIL = '?'";
+		String sql = "SELECT * FROM USERS WHERE EMAIL = ?";
 		
 		ResultSet rs = null;
 		User user = null;
@@ -73,28 +78,40 @@ public class UserDAOImpl implements UserDAO {
 
 	}
 
-	
-	public void updateUser(String email) throws SQLException {
-		// TODO Auto-generated method stub
-
-	}
-
-	
-	public void deleteUser(String email) throws SQLException {
+	/*
+	 * Updates the title of a user in the database
+	 */
+	public void updateUser(String email, int tid) throws SQLException {
 		
 		Connection conn = cf.getConnection();
 		String[] primaryKeys = new String[1];
-		primaryKeys[0] = "USERID";
-		String sql = "DELETE FROM USERS WHERE EMAIL = '?'";
+		primaryKeys[0] = "USER_ID";
+		String sql = "UPDATE USERS SET TID = ? WHERE EMAIL = ?";
 		
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql, primaryKeys);
-			ps.setString(1, email);
-			ps.execute();
-			conn.close();
+			ps.setInt(1, tid);
+			ps.setString(2, email);
+			ps.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		
+		conn.close();
+	}
+
+	/*
+	 * Deletes a user from the database
+	 */
+	public void deleteUser(String email) throws SQLException {
+		
+		Connection conn = cf.getConnection();
+		String sql = "{call DELETE_USER(?)";
+		
+		CallableStatement call = conn.prepareCall(sql);
+		call.setString(1, email);
+		call.execute();
+		conn.close();
 		
 	}
 

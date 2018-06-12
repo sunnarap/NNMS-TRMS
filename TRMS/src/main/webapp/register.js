@@ -1,9 +1,4 @@
-var fname = document.getElementById("fname");
-var lname = document.getElementById("lname");
-var user = document.getElementById("email");
-var pw = document.getElementById("password");
-var verify = document.getElementById("password2");
-var buttons = document.getElementById("submituser");
+var buttons = document.getElementsByName("submituser");
 var form = document.getElementById("registerdata");
 
 
@@ -17,9 +12,7 @@ function getInfo() {
 
 
 window.onload = function() {
-    buttons.addEventListener("click",function() {
-    	
-    });
-    form.addEventListener("submit",getInfo);
+    buttons[0].addEventListener("click",getInfo);
+    //form.addEventListener("submit",getInfo);
 
 }
