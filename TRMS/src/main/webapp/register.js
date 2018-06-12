@@ -1,4 +1,3 @@
-
 var fname = document.getElementById("fname");
 var lname = document.getElementById("lname");
 var user = document.getElementById("email");
