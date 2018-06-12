@@ -1,5 +1,6 @@
 package com.revature.daoimpl;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -21,28 +22,24 @@ public class UserDAOImpl implements UserDAO {
 	public static ConnFactory cf = ConnFactory.getInstance();
 
 	
-	public void createUser(int userId, String fName, String lName, 
+	public void createUser(String fName, String lName, 
 			String email, String password, int tid) throws SQLException {
 		
 		Connection conn = cf.getConnection();
-		String[] primaryKeys = new String[1];
-		primaryKeys[0] = "USERID";
-		String sql = 
-				"INSERT INTO USERS VALUES(USERIDSEQUENCE.NEXTVAL,?,?,?,?,?)";
-
-		try {
-			PreparedStatement ps = conn.prepareStatement(sql,primaryKeys);
-			ps.setString(1, fName);
-			ps.setString(2, lName);
-			ps.setString(3, email);
-			ps.setString(4, password);
-			ps.setInt(5, tid);
-			ps.executeUpdate();
-		} catch(SQLException e) {
-			e.printStackTrace();
-		}
-
+		String sql = "{call CREATE_USER(?,?,?,?,?)";
+		
+		System.out.println("Begin call");
+		
+		CallableStatement call = conn.prepareCall(sql);
+		call.setString(1, fName);
+		call.setString(2, lName);
+		call.setString(3, email);
+		call.setString(4, password);
+		call.setInt(5, tid);
+		call.execute();
 		conn.close();
+		
+		System.out.println("Call complete");
 		
 	}
 
