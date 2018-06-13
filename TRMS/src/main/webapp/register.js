@@ -1,31 +1,24 @@
-var buttons = document.getElementbyId("submituser");
+var fname = document.getElementById("fname");
+var lname = document.getElementById("lname");
+var user = document.getElementById("email");
+var pw = document.getElementById("password");
+var verify = document.getElementById("password2");
+var buttons = document.getElementById("submituser");
 var form = document.getElementById("registerdata");
 
 
 function getInfo() {
-	alert("ok");
+    alert("test");
     form = document.getElementById("registerdata");
     var xhr = new XMLHttpRequest();
     var forminfo = new FormData(form);
-    xhr.set('Content-Type','multipart/form-data');
-    xhr.open('POST','/RegistrationServlet',true);
+    xhr.open("POST","/RegistrationServlet",true);
     xhr.send(forminfo);
 }
 
-
-
-buttons.addEventListener("click",function () {
-	alert("ok");
-    form = document.getElementById("registerdata");
-    var xhr = new XMLHttpRequest();
-    var forminfo = new FormData(form);
-    xhr.set('Content-Type','multipart/form-data');
-    xhr.open('POST','/RegistrationServlet',true);
-    xhr.send(forminfo);
+document.getElementById('test').addEventListener('click',function() {
+    alert("Test");
 });
 
-window.onload = function() {
-    
-    //form.addEventListener("submit",getInfo);
 
-}
+document.getElementById('registerdata').addEventListener('submit',getInfo);
