@@ -1,3 +1,4 @@
+
 package com.revature.dao;
 
 import java.sql.SQLException;
@@ -14,7 +15,7 @@ public interface UserDAO {
 	/*
 	 * Create and put a new user in a database
 	 */
-	public abstract void createUser(int userId, String fName,String lName,
+	public abstract void createUser(String fName,String lName,
 			String email, String password, int tid) throws SQLException;
 	
 	/*

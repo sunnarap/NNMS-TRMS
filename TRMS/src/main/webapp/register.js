@@ -8,18 +8,17 @@ var form = document.getElementById("registerdata");
 
 
 function getInfo() {
+    alert("test");
     form = document.getElementById("registerdata");
     var xhr = new XMLHttpRequest();
     var forminfo = new FormData(form);
-    xhr.open("POST","\loginscreen",true);
+    xhr.open("POST","/RegistrationServlet",true);
     xhr.send(forminfo);
 }
 
+document.getElementById('test').addEventListener('click',function() {
+    alert("Test");
+});
 
-window.onload = function() {
-    buttons.addEventListener("click",function() {
-    	
-    });
-    form.addEventListener("submit",getInfo);
 
-}
+document.getElementById('registerdata').addEventListener('submit',getInfo);
