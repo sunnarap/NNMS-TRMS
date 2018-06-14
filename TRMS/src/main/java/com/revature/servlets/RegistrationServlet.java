@@ -1,7 +1,6 @@
 package com.revature.servlets;
-
 import java.io.IOException;
-
+import com.revature.service.*;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,49 +9,52 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Servlet for new user registration form.
- * @author Nathaniel Simpson
+ * @author Marcus Aderele
  *
  */
+
 public class RegistrationServlet extends HttpServlet {
+	
+	
+	
 	private static final long serialVersionUID = 1L;
 	
 	//HTML file names
-	//private final static String REG_HTML_NAME = "registration.html";
 	private final static String REG_HTML_NAME = "register.html";
 	
-//	protected void doGet(HttpServletRequest request,
-//			HttpServletResponse response)
-//					throws ServletException, IOException {
-//		System.out.println("doGet of LoginServlet");
-//		RequestDispatcher rd = request.getRequestDispatcher("login.html");
-//		rd.forward(request, response);
-//	}
-	
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		RequestDispatcher rd = req.getRequestDispatcher("register.html");
-		resp.setContentType("text/html");
-		rd.forward(req, resp);
-		String fname = req.getParameter("fname");
-		String lname = req.getParameter("lname");
-		System.out.println(req.getRequestURI());
-		System.out.println(req.getParameter("fname"));
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException,
+			IOException {
+        request.getRequestDispatcher("register.html").forward(request, response);
+
+	}
+	
+	//servlet to process user entered info and create a user in the database
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException,
+			IOException {
+		String[] arr = getServletContext().getInitParameter("dbInfo").split(",");
+		Credentials cred = new Credentials(arr);
+		
+		System.out.println("In doPost of Registration Servlet");
+		String fname = request.getParameter("fname");
+		String lname = request.getParameter("lname");
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		System.out.println(fname + lname + email + password);
+		response.setContentType("text/html");
+		boolean successful = cred.register(fname, lname, email, password);
+		
+		if (successful == true)
+		{
+			response.sendRedirect(request.getContextPath() + "/login");
+			//request.getRequestDispatcher("login.html").forward(request, response);
+		}
+	
 		
 	}
-	
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		super.doPost(req, resp);
-	}
-//
-//	protected void doPost(HttpServletRequest request,
-//			HttpServletResponse response)
-//					throws ServletException, IOException {
-//		System.out.println("doPost of LoginServlet");
-//		//response.sendRedirect("home"); //redirect
-//		request.getRequestDispatcher("home.html").forward(request, response); //forward
-//	}
+
 
 }
