@@ -21,6 +21,15 @@ import com.revature.util.ConnFactory;
 
 public class ReimbursementsDAOimpl implements ReimbursementsDAO {
 
+	
+	private String[] arr;
+	
+	public ReimbursementsDAOimpl(String[] arr) {
+	
+		this.arr = arr;
+	
+	}
+	
 	//Connection factory object for connecting to the database
 	public static ConnFactory cf = ConnFactory.getInstance();
 	
@@ -31,7 +40,7 @@ public class ReimbursementsDAOimpl implements ReimbursementsDAO {
 	public void createReimbursement(String location, Timestamp startDate, Timestamp submit, Timestamp finished, double amount, String status,
 			String desc, String justification, int cId, int userId, int worker) throws SQLException {
 		
-		Connection conn = cf.getConnection();
+		Connection conn = cf.getConnection(arr);
 		String sql = 
 				"INSERT INTO REIMBURSEMENT VALUES(RIDSEQUENCE.NEXTVAL,?,?,?,?,?,?,?,?,?,?,?)";
 
@@ -63,7 +72,7 @@ public class ReimbursementsDAOimpl implements ReimbursementsDAO {
 	 */
 	public Reimbursements retrieveReimbursement(int rId) throws SQLException {
 		
-		Connection conn = cf.getConnection();
+		Connection conn = cf.getConnection(arr);
 		String sql = "SELECT * FROM USERS WHERE RID = '?'";
 		
 		ResultSet rs = null;
@@ -99,7 +108,7 @@ public class ReimbursementsDAOimpl implements ReimbursementsDAO {
 	*/
 	//update Status
 	public void updateReimbursementStatus(int rId, String status) throws SQLException {
-		Connection conn = cf.getConnection();
+		Connection conn = cf.getConnection(arr);
 		String sql = "UPDATE REIMBURSEMENT SET STATUS = ? WHERE RID = ?";
 		try
 		{
@@ -118,7 +127,7 @@ public class ReimbursementsDAOimpl implements ReimbursementsDAO {
 
 	//update Amount
 	public void updateReimbursementAmount(int rId, Double amt) throws SQLException {
-		Connection conn = cf.getConnection();
+		Connection conn = cf.getConnection(arr);
 		String sql = "UPDATE REIMBURSEMENT SET AMOUNT = ? WHERE RID = ?";
 		try
 		{
@@ -138,7 +147,7 @@ public class ReimbursementsDAOimpl implements ReimbursementsDAO {
 
 	//update current worker
 	public void updateReimbursementWorker(int rId, int worker) throws SQLException {
-		Connection conn = cf.getConnection();
+		Connection conn = cf.getConnection(arr);
 		
 		String sql = "UPDATE REIMBURSEMENT SET WORKER = ? WHERE RID = ?";
 		try
@@ -160,7 +169,7 @@ public class ReimbursementsDAOimpl implements ReimbursementsDAO {
 
 	//updateFinishTime
 	public void updateReimbursementFinishTime(int rId, Timestamp time) throws SQLException {
-		Connection conn = cf.getConnection();
+		Connection conn = cf.getConnection(arr);
 		String sql = "UPDATE REIMBURSEMENT SET time = ? WHERE RID = ?";
 		try
 		{
@@ -180,7 +189,7 @@ public class ReimbursementsDAOimpl implements ReimbursementsDAO {
 	}
 
 	public void deleteReimbursement(int rId) throws SQLException {
-		Connection conn = cf.getConnection();
+		Connection conn = cf.getConnection(arr);
 		String sql = "{call DELETE_REIMBURSEMENT(?)";
 		
 		try {

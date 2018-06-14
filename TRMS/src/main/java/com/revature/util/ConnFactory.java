@@ -1,5 +1,6 @@
 package com.revature.util;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -28,24 +29,17 @@ public class ConnFactory {
 		return cf;
 	}
 
-	public Connection getConnection() {
+	public Connection getConnection(String[] arr) {
 		Connection conn = null;
 		//getConnection(url, username, password)
 		try {
-			Properties prop = new Properties();
-			prop.load(new FileReader("database.properties"));
-			Class.forName(prop.getProperty("driver"));
-			conn = DriverManager.getConnection(
-					prop.getProperty("url"),
-					prop.getProperty("usr"),
-					prop.getProperty("password"));
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			 conn = DriverManager.getConnection(arr[0], 
+                     arr[1], 
+                     arr[2]);
+
+		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
 		return conn;
