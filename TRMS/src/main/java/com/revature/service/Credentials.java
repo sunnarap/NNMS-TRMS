@@ -43,6 +43,7 @@ public class Credentials {
 			System.out.println(user.getPassword());
 			if (user.getEmail().equals(email) && user.getPassword().equals(password))
 			{
+				user.getUserId();
 				return true;
 			}
 		}catch (SQLException e) {

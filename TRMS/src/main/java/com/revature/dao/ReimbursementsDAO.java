@@ -18,15 +18,23 @@ public interface ReimbursementsDAO {
 	/*
 	 * Create and put a new reimbursement/form data in database
 	 */
-	public abstract void createReimbursement(String location, double amount, Timestamp startDate, String status, String desc,
-			String justification, int cId, int userId, int worker) throws SQLException;
 
+	public abstract void createReimbursement(String location, double amount, Timestamp startDate, String desc,
+            String justification, int cId, int userId, int worker) throws SQLException;	
+	
 	/*
 	 * Retrieve reimbursement/form details from the database
 	 */
-	public abstract Reimbursements retrieveReimbursement(int rId) throws SQLException;
+	public abstract Reimbursements retrieveReimbursement(int rId)throws SQLException;
 	
-	public abstract List<Reimbursements> retrieveUserReimbursements(int userId) throws SQLException;
+	//retrieve coverage id
+	public abstract int retrieveCoverageId(String type) throws SQLException;
+	
+	//retrieve User id
+	public abstract int retrieveUserId(String email) throws SQLException;
+	
+	//retrieve superUser id
+	public abstract int retrieveSuperUserId(int titleId) throws SQLException;
 	
 	public abstract List<Reimbursements> retrieveAllReimbursements() throws SQLException;
 
@@ -49,6 +57,6 @@ public interface ReimbursementsDAO {
 	/*
 	 * Delete reimbursement/form details in the database
 	 */
-	public abstract void deleteReimbursement(int rId) throws SQLException;;
+	public abstract void deleteReimbursement(int rId) throws SQLException;
 
 }

@@ -4,11 +4,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.revature.service.Credentials;
 
@@ -51,6 +51,11 @@ public class LoginServlet extends HttpServlet {
 		{
 			if(successful == true) 
 			{
+				HttpSession sesh = request.getSession(true);
+				sesh.setAttribute("email", email);
+
+				/*HttpSession sesh2 = request.getSession(false);
+                	String email1 = (String) sesh2.getAttribute("email");*/
 				response.sendRedirect(request.getContextPath() + "/dashboard");
 			} 
 			else 
@@ -63,15 +68,14 @@ public class LoginServlet extends HttpServlet {
 				pw.flush();
 				request.getRequestDispatcher("/login.html").include(request, response);
 
+				String signupButt = request.getParameter("signup");
+				if(signupButt != null) {
+					response.sendRedirect(request.getContextPath() + "/register");
+				}
+
+
 			}
+
 		}
-
-		String signupButt = request.getParameter("signup");
-		if(signupButt != null) {
-			response.sendRedirect(request.getContextPath() + "/register");
-		}
-
-
 	}
-
 }

@@ -1,4 +1,4 @@
-package com.revature.daoimpl;
+ package com.revature.daoimpl;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -39,27 +39,27 @@ public class ReimbursementsDAOimpl implements ReimbursementsDAO {
 	 * 
 	 * Reformatted into a callable statement
 	 */
-	public void createReimbursement(String location, double amount, Timestamp startDate, String status,
-			String desc, String justification, int cId, int userId, int worker) throws SQLException {
 
-		Connection conn = cf.getConnection(arr);
+	public void createReimbursement(String location,double amount, Timestamp startDate,
+            String desc, String justification, int cId, int userId, int worker) throws SQLException {
 
-		String sql = "{call CREATE_REIMBURSEMENT(?,?,?,?,?,?,?,?,?)";
+        Connection conn = cf.getConnection(arr);
 
-		CallableStatement call = conn.prepareCall(sql);
-		call.setString(1, location);
-		call.setDouble(2, amount);
-		call.setTimestamp(3, startDate);
-		call.setString(4, status);
-		call.setString(5, desc);
-		call.setString(6, justification);
-		call.setInt(7, cId);
-		call.setInt(8, userId);
-		call.setInt(9, worker);
-		call.execute();
-		conn.close();
-	}
+        String sql = "{call CREATE_REIMBURSEMENT(?,?,?,?,?,?,?,?,?)";
 
+        CallableStatement call = conn.prepareCall(sql);
+        call.setString(1, location);
+        call.setDouble(2, amount);
+        call.setTimestamp(3, startDate);
+        call.setString(4, "Pending");
+        call.setString(5, desc);
+        call.setString(6, justification);
+        call.setInt(7, cId);
+        call.setInt(8, userId);
+        call.setInt(9, worker);
+        call.execute();
+        conn.close();
+    }
 
 	/*
 	 * Retrieve reimbursement/form details from the database
@@ -159,8 +159,96 @@ public class ReimbursementsDAOimpl implements ReimbursementsDAO {
 
 		return rList;
 	}
+	
+	
+	//retrieve coverage id
+	@Override
+	public int retrieveCoverageId(String type) throws SQLException {
+		System.out.println("in retrieve cid");
+		Connection conn = cf.getConnection(arr);
+		String sql = "SELECT CID FROM COVERAGES WHERE CTYPE = ?";
+		int cId = 0;
+		try
+		{
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, type);
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next() == true)
+			{
+				cId = rs.getInt(1);
+			}
+			
+			conn.close();
+			return cId;
+			
+			
+			
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		return 0;
+		
+	}
+	
+	
+	//retrieve user id
+		@Override
+		public int retrieveUserId(String email) throws SQLException {
+			
+			Connection conn = cf.getConnection(arr);
+			String sql = "SELECT USERID FROM USERS WHERE EMAIL = ?";
+			int uId = 0;
+			try
+			{
+				PreparedStatement ps = conn.prepareStatement(sql);
+				ps.setString(1, email);
+				ResultSet rs = ps.executeQuery();
+				
+				while(rs.next())
+				{
+					uId = rs.getInt(1);
+				}
+				conn.close();
+				
+			}
+			catch(SQLException e)
+			{
+				e.printStackTrace();
+			}
+			return uId;
+		}
+		
 
-
+		//retrieve superuserID from title ID
+			@Override
+			public int retrieveSuperUserId(int titleId) throws SQLException {
+				
+				Connection conn = cf.getConnection(arr);
+				String sql = "SELECT USERID FROM USERS WHERE TID = ?";
+				int sUId = 0;
+				try
+				{
+					PreparedStatement ps = conn.prepareStatement(sql);
+					ps.setInt(1, titleId);
+					ResultSet rs = ps.executeQuery();
+					
+					while(rs.next())
+					{
+						sUId = rs.getInt(1);
+					}
+					conn.close();
+					
+				}
+				catch(SQLException e)
+				{
+					e.printStackTrace();
+				}
+				return sUId;
+			}
+	
 	//---------------------------UPDATES--------------------------------------------
 	/*
 	 * Update reimbursement info in the database
@@ -261,6 +349,6 @@ public class ReimbursementsDAOimpl implements ReimbursementsDAO {
 		{
 			e.printStackTrace();
 		}
-	}
+	}	
 
 }

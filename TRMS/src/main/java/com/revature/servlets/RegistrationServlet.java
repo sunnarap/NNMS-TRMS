@@ -26,7 +26,6 @@ public class RegistrationServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException,
 			IOException {
-		System.out.println("In doGet of Registration Servlet");
         request.getRequestDispatcher("register.html").forward(request, response);
 
 	}
