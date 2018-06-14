@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.revature.service.Credentials;
 
@@ -51,6 +52,11 @@ public class LoginServlet extends HttpServlet {
 			{
                 if(successful == true) 
                 {
+                	HttpSession sesh = request.getSession(true);
+                	sesh.setAttribute("email", email);
+                	
+                	/*HttpSession sesh2 = request.getSession(false);
+                	String email1 = (String) sesh2.getAttribute("email");*/
                 	response.sendRedirect(request.getContextPath() + "/dashboard");
                 } 
                 else 

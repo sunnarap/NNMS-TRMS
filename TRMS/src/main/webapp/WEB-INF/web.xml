@@ -2,14 +2,14 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <display-name>TRMS</display-name>
   <welcome-file-list>
-     <welcome-file>login</welcome-file>
-     <welcome-file>login.html</welcome-file>
-     <welcome-file>login.js</welcome-file>
- </welcome-file-list>
+    <welcome-file>login</welcome-file>
+    <welcome-file>login.html</welcome-file>
+    <welcome-file>login.js</welcome-file>
+  </welcome-file-list>
   <context-param>
-	  <param-name>dbInfo</param-name>
-	  <param-value>jdbc:oracle:thin:@revaturebc.cbdvvi8rghl2.us-east-2.rds.amazonaws.com:1521:ORCL,aaderele01,Aderelode1#</param-value>
-   </context-param>
+    <param-name>dbInfo</param-name>
+    <param-value>jdbc:oracle:thin:@revaturebc.cbdvvi8rghl2.us-east-2.rds.amazonaws.com:1521:ORCL,aaderele01,Aderelode1#</param-value>
+  </context-param>
   <servlet>
     <description></description>
     <display-name>RegistrationServlet</display-name>
@@ -39,5 +39,15 @@
   <servlet-mapping>
     <servlet-name>DashboardServlet</servlet-name>
     <url-pattern>/dashboard</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FormServlet</display-name>
+    <servlet-name>FormServlet</servlet-name>
+    <servlet-class>com.revature.servlets.FormServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FormServlet</servlet-name>
+    <url-pattern>/form</url-pattern>
   </servlet-mapping>
 </web-app>

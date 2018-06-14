@@ -1,4 +1,4 @@
-package com.revature.daoimpl;
+ package com.revature.daoimpl;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -37,35 +37,26 @@ public class ReimbursementsDAOimpl implements ReimbursementsDAO {
 	/*
 	 * Create and put a new reimbursement/form data in database
 	 */
-	public void createReimbursement(String location, Timestamp startDate, Timestamp submit, Timestamp finished, double amount, String status,
-			String desc, String justification, int cId, int userId, int worker) throws SQLException {
-		
-		Connection conn = cf.getConnection(arr);
-		String sql = 
-				"INSERT INTO REIMBURSEMENT VALUES(RIDSEQUENCE.NEXTVAL,?,?,?,?,?,?,?,?,?,?,?)";
+	public void createReimbursement(String location,double amount, Timestamp startDate,
+            String desc, String justification, int cId, int userId, int worker) throws SQLException {
 
-		try {
-			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(1, location);
-			ps.setTimestamp(2, startDate);
-			ps.setTimestamp(3, submit);
-			ps.setTimestamp(4, finished);
-			ps.setDouble(5, amount);
-			ps.setString(6, status);
-			ps.setString(7, desc);
-			ps.setString(8, justification);
-			ps.setInt(9, cId);
-			ps.setInt(10, userId);
-			ps.setInt(11, worker);
+        Connection conn = cf.getConnection(arr);
 
-			ps.executeUpdate();
-		} catch(SQLException e) {
-			e.printStackTrace();
-		}
+        String sql = "{call CREATE_REIMBURSEMENT(?,?,?,?,?,?,?,?,?)";
 
-		conn.close();
-		
-	}
+        CallableStatement call = conn.prepareCall(sql);
+        call.setString(1, location);
+        call.setDouble(2, amount);
+        call.setTimestamp(3, startDate);
+        call.setString(4, "Pending");
+        call.setString(5, desc);
+        call.setString(6, justification);
+        call.setInt(7, cId);
+        call.setInt(8, userId);
+        call.setInt(9, worker);
+        call.execute();
+        conn.close();
+    }
 
 	/*
 	 * Retrieve reimbursement/form details from the database
@@ -101,6 +92,96 @@ public class ReimbursementsDAOimpl implements ReimbursementsDAO {
 		
 	}
 	
+	
+	//retrieve coverage id
+	@Override
+	public int retrieveCoverageId(String type) throws SQLException {
+		System.out.println("in retrieve cid");
+		Connection conn = cf.getConnection(arr);
+		String sql = "SELECT CID FROM COVERAGES WHERE CTYPE = ?";
+		int cId = 0;
+		try
+		{
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, type);
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next() == true)
+			{
+				cId = rs.getInt(1);
+			}
+			
+			conn.close();
+			return cId;
+			
+			
+			
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		return 0;
+		
+	}
+	
+	
+	//retrieve user id
+		@Override
+		public int retrieveUserId(String email) throws SQLException {
+			
+			Connection conn = cf.getConnection(arr);
+			String sql = "SELECT USERID FROM USERS WHERE EMAIL = ?";
+			int uId = 0;
+			try
+			{
+				PreparedStatement ps = conn.prepareStatement(sql);
+				ps.setString(1, email);
+				ResultSet rs = ps.executeQuery();
+				
+				while(rs.next())
+				{
+					uId = rs.getInt(1);
+				}
+				conn.close();
+				
+			}
+			catch(SQLException e)
+			{
+				e.printStackTrace();
+			}
+			return uId;
+		}
+		
+
+		//retrieve superuserID from title ID
+			@Override
+			public int retrieveSuperUserId(int titleId) throws SQLException {
+				
+				Connection conn = cf.getConnection(arr);
+				String sql = "SELECT USERID FROM USERS WHERE TID = ?";
+				int sUId = 0;
+				try
+				{
+					PreparedStatement ps = conn.prepareStatement(sql);
+					ps.setInt(1, titleId);
+					ResultSet rs = ps.executeQuery();
+					
+					while(rs.next())
+					{
+						sUId = rs.getInt(1);
+					}
+					conn.close();
+					
+				}
+				catch(SQLException e)
+				{
+					e.printStackTrace();
+				}
+				return sUId;
+			}
+	
+
 	
 	//---------------------------UPDATES--------------------------------------------
 	/*
@@ -203,5 +284,7 @@ public class ReimbursementsDAOimpl implements ReimbursementsDAO {
 			e.printStackTrace();
 		}
 	}
+
+	
 
 }

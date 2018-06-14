@@ -27,7 +27,7 @@ public class DashboardServlet extends HttpServlet{
 //	JSONObject json = new JSONObject();
 //	GetInfo gI = new GetInfo(arr);
 //	
-	private static final long serialVersionUID = 2L;
+	private static final long serialVersionUID = 3L;
 	
 	@Override 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
