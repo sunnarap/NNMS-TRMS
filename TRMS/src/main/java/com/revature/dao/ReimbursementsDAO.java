@@ -2,6 +2,7 @@ package com.revature.dao;
 
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.util.List;
 
 import com.revature.beans.Reimbursements;
 
@@ -32,6 +33,10 @@ public interface ReimbursementsDAO {
 	
 	//retrieve superUser id
 	public abstract int retrieveSuperUserId(int titleId) throws SQLException;
+	
+	public abstract List<Reimbursements> retrieveUserReimbursements(int userId) throws SQLException;
+	
+	public abstract List<Reimbursements> retrieveAllReimbursements() throws SQLException;
 	
 	
 	//---------------------------UPDATES--------------------------------------------

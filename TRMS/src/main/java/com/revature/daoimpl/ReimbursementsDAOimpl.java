@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.revature.beans.Reimbursements;
 import com.revature.beans.User;
@@ -180,7 +182,75 @@ public class ReimbursementsDAOimpl implements ReimbursementsDAO {
 				}
 				return sUId;
 			}
+			
+			public List<Reimbursements> retrieveUserReimbursements(int userId) throws SQLException {
+				List<Reimbursements> rList = new ArrayList<Reimbursements>();
+
+				Connection conn = cf.getConnection(arr);
+				String sql = "SELECT * FROM REIMBURSEMENT WHERE USERID = ?";
+				ResultSet rs = null;
+
+				try {
+					PreparedStatement ps = conn.prepareStatement(sql);
+					ps.setInt(1, userId);
+					rs = ps.executeQuery();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+
+				Reimbursements r = null;
+
+				while (rs.next()) {
+					r = new Reimbursements(rs.getInt(1),rs.getString(2),
+							rs.getTimestamp(3),rs.getTimestamp(4),
+							rs.getTimestamp(5),rs.getDouble(6),
+							rs.getString(7),rs.getString(8),
+							rs.getString(9),rs.getShort(10),
+							rs.getInt(11),rs.getInt(12));
+					rList.add(r);
+				}
+
+				if (rList.isEmpty()) {
+					return null;
+				}
+
+				return rList;
+			}
 	
+			
+			public List<Reimbursements> retrieveAllReimbursements() throws SQLException {
+				List<Reimbursements> rList = new ArrayList<Reimbursements>();
+
+				Connection conn = cf.getConnection(arr);
+				String sql = "SELECT * FROM REIMBURSEMENT";
+				ResultSet rs = null;
+
+				try {
+					PreparedStatement ps = conn.prepareStatement(sql);
+					rs = ps.executeQuery();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+
+				Reimbursements r = null;
+
+				while (rs.next()) {
+					r = new Reimbursements(rs.getInt(1),rs.getString(2),
+							rs.getTimestamp(3),rs.getTimestamp(4),
+							rs.getTimestamp(5),rs.getDouble(6),
+							rs.getString(7),rs.getString(8),
+							rs.getString(9),rs.getShort(10),
+							rs.getInt(11),rs.getInt(12));
+					rList.add(r);
+				}
+
+				if (rList.isEmpty()) {
+					return null;
+				}
+
+				return rList;
+			}
+
 
 	
 	//---------------------------UPDATES--------------------------------------------

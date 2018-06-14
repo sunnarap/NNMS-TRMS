@@ -26,9 +26,9 @@
         
 
         <!--Main Screen-->
-       <div class='container'>
+       <div class='container' style="width: 100%">
 
-            <form class='formboxleft' id='formapp' method="post">
+            <form class='formboxleft' id='formapp'>
                     <div width = "500px"> 
                     <fieldset>
                         <legend>User Information</legend>
@@ -48,8 +48,8 @@
                     Description
                     <textarea name='desc' class='parabox'></textarea><br  />
                     Type of Event 
-                    <select name = "type">
-                        <option value="University Courses">University Courses</option>
+                    <select>
+                         <option value="University Courses">University Courses</option>
                         <option value="Seminar">Seminar</option>
                         <option value="Certification Preparation">Certification Preparation</option>
                         <option value="Certification">Certification</option>
@@ -61,7 +61,7 @@
                     <fieldset>
                         <legend>Extra</legend>
                     Work Related Justification<br  />    
-                    <textarea name='work-just' class='parabox'></textarea><br  />
+                    <textarea id='work-just' class='parabox'></textarea><br  />
                     </fieldset>
                     <br />
                     <input type='submit' value='Submit' />
