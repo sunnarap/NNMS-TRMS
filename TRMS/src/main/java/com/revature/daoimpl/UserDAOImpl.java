@@ -18,6 +18,15 @@ import com.revature.util.ConnFactory;
  */
 public class UserDAOImpl implements UserDAO {
 	
+	
+	private String[] arr;
+	
+	public UserDAOImpl(String[] arr) {
+	
+		this.arr = arr;
+	
+	}
+	
 	//Connection factory object for connecting to the database
 	public static ConnFactory cf = ConnFactory.getInstance();
 
@@ -28,7 +37,7 @@ public class UserDAOImpl implements UserDAO {
 	public void createUser(String fName, String lName, 
 			String email, String password, int tid) throws SQLException {
 		
-		Connection conn = cf.getConnection();
+		Connection conn = cf.getConnection(arr);
 		String sql = "{call CREATE_USER(?,?,?,?,?)";
 		
 		System.out.println("Begin call");
@@ -51,11 +60,10 @@ public class UserDAOImpl implements UserDAO {
 	 */
 	public User retrieveUser(String email) throws SQLException {
 		
-		Connection conn = cf.getConnection();
+		Connection conn = cf.getConnection(arr);
 		String[] primaryKeys = new String[1];
 		primaryKeys[0] = "USERID";
-		String sql = "SELECT * FROM USERS WHERE EMAIL = ?";
-		
+		String sql = "SELECT * FROM USERS WHERE EMAIL = '?'";
 		ResultSet rs = null;
 		User user = null;
 		
@@ -78,12 +86,13 @@ public class UserDAOImpl implements UserDAO {
 
 	}
 
+	
 	/*
 	 * Updates the title of a user in the database
 	 */
 	public void updateUser(String email, int tid) throws SQLException {
 		
-		Connection conn = cf.getConnection();
+		Connection conn = cf.getConnection(arr);
 		String[] primaryKeys = new String[1];
 		primaryKeys[0] = "USER_ID";
 		String sql = "UPDATE USERS SET TID = ? WHERE EMAIL = ?";
@@ -96,7 +105,7 @@ public class UserDAOImpl implements UserDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		conn.close();
 	}
 
@@ -105,7 +114,7 @@ public class UserDAOImpl implements UserDAO {
 	 */
 	public void deleteUser(String email) throws SQLException {
 		
-		Connection conn = cf.getConnection();
+		Connection conn = cf.getConnection(arr);
 		String sql = "{call DELETE_USER(?)";
 		
 		CallableStatement call = conn.prepareCall(sql);

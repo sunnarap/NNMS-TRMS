@@ -24,11 +24,13 @@ public interface UserDAO {
 	public abstract User retrieveUser(String email) throws SQLException;
 	
 	/*
-	 * Update a user in the database. Used to update title of the user
+	 * Update a user in the database. Unsure of what to do here.
+	 */
+	
+	 /* Update a user in the database. Used to update title of the user
 	 * by changing the title ID.
 	 */
 	public abstract void updateUser(String email, int tid) throws SQLException;
-	
 	/*
 	 * Deletes a user from the database.
 	 */

@@ -17,12 +17,12 @@ public class Reimbursements {
 	private int userId;
 	private int worker;
 	
-	
 	public Reimbursements() {
 		super();
 	}
 
 	
+
 	public Reimbursements(int rId, String location, Timestamp startDate, Timestamp submit, Timestamp finished,
 			double amount, String status, String desc, String justification, int cId, int userId, int worker) {
 		super();
