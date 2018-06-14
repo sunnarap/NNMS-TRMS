@@ -61,19 +61,15 @@ public class UserDAOImpl implements UserDAO {
 	public User retrieveUser(String email) throws SQLException {
 		
 		Connection conn = cf.getConnection(arr);
-		String[] primaryKeys = new String[1];
-		primaryKeys[0] = "USERID";
-		String sql = "SELECT * FROM USERS WHERE EMAIL = '?'";
+		String sql = "SELECT * FROM USERS WHERE EMAIL = ?";
 		ResultSet rs = null;
 		User user = null;
 		
-		try {
-			PreparedStatement ps = conn.prepareStatement(sql,primaryKeys);
+		
+			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, email);
 			rs = ps.executeQuery();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		
 		
 		if (rs.next()) {
 			user = new User(rs.getInt(1), rs.getString(2), rs.getString(3),
@@ -84,6 +80,21 @@ public class UserDAOImpl implements UserDAO {
 		
 		return null;
 
+	}
+	
+	public boolean userExist(String email) throws SQLException {
+		Connection conn = cf.getConnection(arr);
+		String sql = "SELECT * FROM USERS WHERE EMAIL = ?";
+		ResultSet rs = null;
+		User user = null;
+		
+		
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, email);
+			rs = ps.executeQuery();
+		
+		
+		return rs.next();
 	}
 
 	

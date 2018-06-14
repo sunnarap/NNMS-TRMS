@@ -41,7 +41,7 @@ xhr.onreadystatechange = function() {
         console.log(jsonObj);
         //document.getElementById("name").innerText = jsonObj.name;
     }
-   xhr.open("GET",'/DashboardServlet');
+   xhr.open("GET",'/dashboard');
    xhr.send();
 }
 

@@ -21,15 +21,15 @@ import com.revature.util.ConnFactory;
 
 public class ReimbursementsDAOimpl implements ReimbursementsDAO {
 
-
+	
 	private String[] arr;
-
+	
 	public ReimbursementsDAOimpl(String[] arr) {
-
+	
 		this.arr = arr;
-
+	
 	}
-
+	
 	//Connection factory object for connecting to the database
 	public static ConnFactory cf = ConnFactory.getInstance();
 
@@ -39,9 +39,12 @@ public class ReimbursementsDAOimpl implements ReimbursementsDAO {
 	 * 
 	 * Reformatted into a callable statement
 	 */
-	public void createReimbursement(String location,
-			double amount, String status, String desc, String justification,
-			int cId, int userId, int worker) throws SQLException {
+	public void createReimbursement(String location, Timestamp startDate, Timestamp submit, Timestamp finished, double amount, String status,
+			String desc, String justification, int cId, int userId, int worker) throws SQLException {
+		
+		Connection conn = cf.getConnection(arr);
+		String sql = 
+				"INSERT INTO REIMBURSEMENT VALUES(RIDSEQUENCE.NEXTVAL,?,?,?,?,?,?,?,?,?,?,?)";
 
 		Connection conn = cf.getConnection(arr);
 
@@ -65,7 +68,7 @@ public class ReimbursementsDAOimpl implements ReimbursementsDAO {
 	 * Retrieve reimbursement/form details from the database
 	 */
 	public Reimbursements retrieveReimbursement(int rId) throws SQLException {
-
+		
 		Connection conn = cf.getConnection(arr);
 		String sql = "SELECT * FROM USERS WHERE RID = '?'";
 
@@ -207,7 +210,7 @@ public class ReimbursementsDAOimpl implements ReimbursementsDAO {
 	//update current worker
 	public void updateReimbursementWorker(int rId, int worker) throws SQLException {
 		Connection conn = cf.getConnection(arr);
-
+		
 		String sql = "UPDATE REIMBURSEMENT SET WORKER = ? WHERE RID = ?";
 		try
 		{

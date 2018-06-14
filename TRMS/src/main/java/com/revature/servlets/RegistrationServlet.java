@@ -1,5 +1,4 @@
 package com.revature.servlets;
-
 import java.io.IOException;
 import com.revature.service.*;
 import javax.servlet.RequestDispatcher;
@@ -15,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 
 public class RegistrationServlet extends HttpServlet {
+	
+	
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -48,7 +49,8 @@ public class RegistrationServlet extends HttpServlet {
 		
 		if (successful == true)
 		{
-			request.getRequestDispatcher("login.html").forward(request, response);
+			response.sendRedirect(request.getContextPath() + "/login");
+			//request.getRequestDispatcher("login.html").forward(request, response);
 		}
 	
 		

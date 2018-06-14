@@ -12,10 +12,12 @@ function getInfo() {
         console.log("didn't work");
         var xhr = new XMLHttpRequest();
         var forminfo = new FormData(form);
-        xhr.open("POST","/RegistrationServlet",true);
+        xhr.open("POST","register",true);
         xhr.send(forminfo);
     }
 }
+
+
 
 var f = document.getElementById('registerdata'); 
 function handleForm(event) {
