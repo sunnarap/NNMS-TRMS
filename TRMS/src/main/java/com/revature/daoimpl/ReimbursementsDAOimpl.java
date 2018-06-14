@@ -39,26 +39,23 @@ public class ReimbursementsDAOimpl implements ReimbursementsDAO {
 	 * 
 	 * Reformatted into a callable statement
 	 */
-	public void createReimbursement(String location, Timestamp startDate, Timestamp submit, Timestamp finished, double amount, String status,
+	public void createReimbursement(String location, double amount, Timestamp startDate, String status,
 			String desc, String justification, int cId, int userId, int worker) throws SQLException {
-		
-		Connection conn = cf.getConnection(arr);
-		String sql = 
-				"INSERT INTO REIMBURSEMENT VALUES(RIDSEQUENCE.NEXTVAL,?,?,?,?,?,?,?,?,?,?,?)";
 
 		Connection conn = cf.getConnection(arr);
 
-		String sql = "{call CREATE_REIMBURSEMENT(?,?,?,?,?,?,?,?)";
+		String sql = "{call CREATE_REIMBURSEMENT(?,?,?,?,?,?,?,?,?)";
 
 		CallableStatement call = conn.prepareCall(sql);
 		call.setString(1, location);
 		call.setDouble(2, amount);
-		call.setString(3, status);
-		call.setString(4, desc);
-		call.setString(5, justification);
-		call.setInt(6, cId);
-		call.setInt(7, userId);
-		call.setInt(8, worker);
+		call.setTimestamp(3, startDate);
+		call.setString(4, status);
+		call.setString(5, desc);
+		call.setString(6, justification);
+		call.setInt(7, cId);
+		call.setInt(8, userId);
+		call.setInt(9, worker);
 		call.execute();
 		conn.close();
 	}

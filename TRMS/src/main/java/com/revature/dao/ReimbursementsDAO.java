@@ -18,7 +18,7 @@ public interface ReimbursementsDAO {
 	/*
 	 * Create and put a new reimbursement/form data in database
 	 */
-	public abstract void createReimbursement(String location, double amount, String status, String desc,
+	public abstract void createReimbursement(String location, double amount, Timestamp startDate, String status, String desc,
 			String justification, int cId, int userId, int worker) throws SQLException;
 
 	/*

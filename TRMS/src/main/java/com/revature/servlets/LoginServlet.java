@@ -17,63 +17,61 @@ import com.revature.service.Credentials;
  */
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 2L;
-	
-		//HTML file names
-		private final static String LOGIN_HTML_NAME = "login.html";
 
-		protected void doGet(HttpServletRequest request,
-				HttpServletResponse response)
-						throws ServletException, IOException {
-			System.out.println("doGet of LoginServlet");
-			request.getRequestDispatcher("login.html").forward(request, response);
+	//HTML file names
+	private final static String LOGIN_HTML_NAME = "login.html";
+
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response)
+					throws ServletException, IOException {
+		System.out.println("doGet of LoginServlet");
+		request.getRequestDispatcher("login.html").forward(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response)
+					throws ServletException, IOException {
+		String[] arr = getServletContext().getInitParameter("dbInfo").split(",");
+		Credentials cred = new Credentials(arr);
+		System.out.println("doPost of LoginServlet");
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+
+
+		boolean successful = true;
+		try {
+			successful = cred.loginVerification(email, password);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
-		protected void doPost(HttpServletRequest request,
-				HttpServletResponse response)
-						throws ServletException, IOException {
-			String[] arr = getServletContext().getInitParameter("dbInfo").split(",");
-			Credentials cred = new Credentials(arr);
-			System.out.println("doPost of LoginServlet");
-			String email = request.getParameter("email");
-			String password = request.getParameter("password");
-			
-
-			boolean successful = true;
-			try {
-				successful = cred.loginVerification(email, password);
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-	
-			String loginButt = request.getParameter("login");
-			if(loginButt != null) 
+		String loginButt = request.getParameter("login");
+		if(loginButt != null) 
+		{
+			if(successful == true) 
 			{
-                if(successful == true) 
-                {
-                	response.sendRedirect(request.getContextPath() + "/dashboard");
-                } 
-                else 
-                {
-                	response.setContentType("text/html");
-                	PrintWriter pw = response.getWriter();
-                	pw.write("<script type=\"text/javascript\" >" + 
-                			"alert('Username or Password is incorrect')" + 
-                			"</script>");
-                	pw.flush();
-                	request.getRequestDispatcher("/login.html").include(request, response);
+				response.sendRedirect(request.getContextPath() + "/dashboard");
+			} 
+			else 
+			{
+				response.setContentType("text/html");
+				PrintWriter pw = response.getWriter();
+				pw.write("<script type=\"text/javascript\" >" + 
+						"alert('Username or Password is incorrect')" + 
+						"</script>");
+				pw.flush();
+				request.getRequestDispatcher("/login.html").include(request, response);
 
-                }
-            }
-			
-            String signupButt = request.getParameter("signup");
-            if(signupButt != null) {
-            	response.sendRedirect(request.getContextPath() + "/register");
-            }
-			
-			
+			}
 		}
-		
+
+		String signupButt = request.getParameter("signup");
+		if(signupButt != null) {
+			response.sendRedirect(request.getContextPath() + "/register");
+		}
+
+
 	}
 
 }
