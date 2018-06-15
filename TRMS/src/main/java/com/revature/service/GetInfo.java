@@ -76,6 +76,8 @@ public class GetInfo {
 		
 	}
 	
+	
+	
 	public int getSuperUserId(int titleId)
 	{
 		

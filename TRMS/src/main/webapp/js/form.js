@@ -2,7 +2,7 @@ function getInfo() {
     form = document.getElementById("formapp");
     var xhr = new XMLHttpRequest();
     var forminfo = new FormData(form);
-    xhr.open("POST","form",true);
+    xhr.open("POST","/FormServlet",true);
     xhr.send(forminfo);
 }
 

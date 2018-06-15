@@ -42,6 +42,26 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+    <display-name>DBDisplayServlet</display-name>
+    <servlet-name>DBDisplayServlet</servlet-name>
+    <servlet-class>com.revature.servlets.DBDisplayServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DBDisplayServlet</servlet-name>
+    <url-pattern>/DBDisplayServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DBUserServlet</display-name>
+    <servlet-name>DBUserServlet</servlet-name>
+    <servlet-class>com.revature.servlets.DBUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DBUserServlet</servlet-name>
+    <url-pattern>/DBUserServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
     <display-name>FormServlet</display-name>
     <servlet-name>FormServlet</servlet-name>
     <servlet-class>com.revature.servlets.FormServlet</servlet-class>
@@ -49,5 +69,35 @@
   <servlet-mapping>
     <servlet-name>FormServlet</servlet-name>
     <url-pattern>/form</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LogoutServlet</display-name>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>com.revature.servlets.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SuperDashServlet</display-name>
+    <servlet-name>SuperDashServlet</servlet-name>
+    <servlet-class>com.revature.servlets.SuperDashServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SuperDashServlet</servlet-name>
+    <url-pattern>/superdash</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SuperDislayDBServlet</display-name>
+    <servlet-name>SuperDislayDBServlet</servlet-name>
+    <servlet-class>com.revature.servlets.SuperDislayDBServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SuperDislayDBServlet</servlet-name>
+    <url-pattern>/SuperDislayDBServlet</url-pattern>
   </servlet-mapping>
 </web-app>

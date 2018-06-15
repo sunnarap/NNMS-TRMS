@@ -92,9 +92,11 @@ public class UserDAOImpl implements UserDAO {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, email);
 			rs = ps.executeQuery();
+			boolean tf = rs.next();
+			conn.close();
 		
 		
-		return rs.next();
+		return tf;
 	}
 
 	
@@ -134,5 +136,20 @@ public class UserDAOImpl implements UserDAO {
 		conn.close();
 		
 	}
+	
+	public int getUserTitle(String email) throws SQLException {
+		Connection conn = cf.getConnection(arr);
+		
+		String sql = "SELECT TID FROM USERS WHERE EMAIL = ?";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, email);
+		ResultSet rs = ps.executeQuery();
+		int i = 1;
+		if(rs.next()) {
+			i = rs.getInt(1);
+		}
+		conn.close();
+		return i;
+ 	}
 
 }

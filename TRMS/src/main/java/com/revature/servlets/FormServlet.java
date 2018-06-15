@@ -11,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.revature.service.GetInfo;
 
@@ -35,7 +36,17 @@ public class FormServlet extends HttpServlet {
 			throws ServletException,
 			IOException {
 		// TODO Auto-generated method stub
-        request.getRequestDispatcher("form.html").forward(request, response);
+		HttpSession check = request.getSession(false);
+		if(check == null) {
+			check = request.getSession();
+		}
+		if(check.getAttribute("email") != null) {
+			request.getRequestDispatcher("form.html").forward(request, response);
+		} else {
+			response.sendRedirect(request.getContextPath() + "/login");
+		}
+		
+        
 
 
 	
@@ -77,7 +88,8 @@ public class FormServlet extends HttpServlet {
 		Timestamp ts = new Timestamp(d.getTime());
 		GetInfo gI = new GetInfo(arr);
 		gI.submitForm(loc, email, amount, ts, desc, typeOfEvent, justification);
-	
+		
+		response.sendRedirect(request.getContextPath() + "/dashboard");
 
 
 	}

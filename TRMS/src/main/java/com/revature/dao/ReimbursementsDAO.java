@@ -60,7 +60,7 @@ public interface ReimbursementsDAO {
 	 */
 	public abstract void deleteReimbursement(int rId)throws SQLException;
 	
-	
+	public abstract String getCoverageType(int cid) throws SQLException;
 
 	
 

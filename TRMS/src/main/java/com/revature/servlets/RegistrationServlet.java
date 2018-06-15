@@ -43,6 +43,7 @@ public class RegistrationServlet extends HttpServlet {
 		String lname = request.getParameter("lname");
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+		System.out.println(fname + lname + email + password);
 		response.setContentType("text/html");
 		boolean successful = cred.register(fname, lname, email, password);
 		
